@@ -1,0 +1,20 @@
+<% if @kitten.errors.any? %>
+<ul>
+  <% @kitten.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_with model: @kitten do |f|%>
+    <%= f.label 'Name'%></br>
+    <%= f.text_field  :name, required: true %></br>
+    <%= f.label 'Age'%></br>
+    <%= f.text_field  :age, required: true %></br>
+    <%= f.label 'Cuteness'%></br>
+    <%= f.text_field  :cuteness, required: true %></br>
+    <%= f.label 'Softness'%></br>
+    <%= f.text_field  :softness, required: true %></br>
+    <%= f.submit "Gimme my kitten!"%>
+<%end%>
